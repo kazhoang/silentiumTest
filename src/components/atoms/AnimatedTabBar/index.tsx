@@ -8,6 +8,7 @@ import {
 	StyleSheet,
 	View,
 	Text,
+	Platform,
 } from 'react-native';
 import Animated, {
 	useAnimatedStyle,
@@ -104,39 +105,43 @@ const AnimatedTabBar = ({
 		};
 	});
 
+	const paddingBottom = bottom + (Platform.OS === 'android' ? 12 : 0);
+
 	return (
-		<View
-			style={[
-				{
-					paddingBottom: bottom,
-					backgroundColor: colors.reverse,
-				},
-			]}
-		>
-			<AnimatedSvg
-				width={110}
-				height={60}
-				viewBox="0 0 110 60"
-				style={[styles.activeBackground, animatedStyles]}
+		<View>
+			<View
+				style={[
+					{
+						paddingBottom: paddingBottom,
+						backgroundColor: colors.reverse,
+					},
+				]}
 			>
-				<Path
-					fill={navigationTheme.colors.background}
-					d="M20 0H0c11.046 0 20 8.953 20 20v5c0 19.33 15.67 35 35 35s35-15.67 35-35v-5c0-11.045 8.954-20 20-20H20z"
-				/>
-			</AnimatedSvg>
-			<View style={styles.tabBarContainer}>
-				{routes.map((route, index) => {
-					const active = index === activeIndex;
-					return (
-						<TabBarComponent
-							key={route.key}
-							name={route.name}
-							active={active}
-							onLayout={e => handleLayout(e, index)}
-							onPress={() => navigation.navigate(route.name)}
-						/>
-					);
-				})}
+				<AnimatedSvg
+					width={110}
+					height={60}
+					viewBox="0 0 110 60"
+					style={[styles.activeBackground, animatedStyles]}
+				>
+					<Path
+						fill={navigationTheme.colors.background}
+						d="M20 0H0c11.046 0 20 8.953 20 20v5c0 19.33 15.67 35 35 35s35-15.67 35-35v-5c0-11.045 8.954-20 20-20H20z"
+					/>
+				</AnimatedSvg>
+				<View style={styles.tabBarContainer}>
+					{routes.map((route, index) => {
+						const active = index === activeIndex;
+						return (
+							<TabBarComponent
+								key={route.key}
+								name={route.name}
+								active={active}
+								onLayout={e => handleLayout(e, index)}
+								onPress={() => navigation.navigate(route.name)}
+							/>
+						);
+					})}
+				</View>
 			</View>
 		</View>
 	);

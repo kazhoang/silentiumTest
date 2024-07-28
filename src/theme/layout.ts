@@ -28,6 +28,9 @@ export default {
 	itemsEnd: {
 		alignItems: 'flex-end',
 	},
+	selfCenter: {
+		alignSelf: 'center',
+	},
 	justifyCenter: {
 		justifyContent: 'center',
 	},

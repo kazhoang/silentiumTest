@@ -1,79 +1,112 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Silentium Test
 
-# Getting Started
+##### Home
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+<img src='.readme/dark-mode-home.png' width=300> <img src='.readme/light-mode-home.png' width=300>
 
-## Step 1: Start the Metro Server
+##### Details
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+<img  src='.readme/detail.png'  width=300>  <img  src='.readme/comments.png'  width=300>
 
-To start Metro, run the following command from the _root_ of your React Native project:
+##### Setting
 
-```bash
-# using npm
-npm start
+<img  src='.readme/setting.png'  width=300>
 
-# OR using Yarn
-yarn start
+## 🌱 Prerequisites
+
+Before running the project, ensure that you have the following installed:
+
+- Node.js (version >= 18)
+- React Native CLI
+- Android SDK (for Android development)
+- Xcode (for iOS development)
+
+## ⚙️ Installation
+
+1. Clone the repository:
+
+```
+git clone https://github.com/kazhoang/silentiumTest.git
 ```
 
-## Step 2: Start your Application
+2. Navigate to the project directory:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+```
+cd silentiumTest
+```
 
-### For Android
+3. Install the project dependencies:
 
-```bash
-# using npm
-npm run android
+```
+yarn
+```
 
-# OR using Yarn
+***
+
+- For iOS, Install the CocoaPods dependencies:
+
+```
+yarn pod
+```
+
+## Running the Application
+
+### Android
+
+```
 yarn android
 ```
 
-### For iOS
+### IOS
 
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
+```
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Project Structure
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+The project follows a standard React Native structure:
 
-## Step 3: Modifying your App
+```bash
+├── .env
+├── android
+├── ios
+└── src
+    ├── components
+    ├── navigators
+    ├── screens
+    ├── services
+    ├── theme
+    ├── types
+    ├── utils
+    └── App.tsx
+```
 
-Now that you have successfully run the app, let's modify it.
+## 📚 Dependencies
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+The project utilizes the following key dependencies:
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+| Library                             | Category         | Version | Description                                                                      |
+| ----------------------------------- | ---------------- | ------- | -------------------------------------------------------------------------------- |
+| React Native                        | Mobile Framework | v0.74   | The best cross-platform mobile framework                                         |
+| React                               | UI Framework     | v18     | The most popular UI framework in the world                                       |
+| TypeScript                          | Language         | v5      | Static typechecking                                                              |
+| React Navigation                    | Navigation       | v6      | Performant and consistent navigation framework                                   |
+| React Native Reanimated             | UI               | v3      | Animations library for React Native                                              |
+| React Native MMKV                   | Storage          | v2      | Key-value storage library for persisting application state                       |
 
-## Congratulations! :tada:
+For a complete list of dependencies, refer to the `package.json` file.
 
-You've successfully run and modified your React Native App. :partying_face:
+## 🏗️ Development
 
-### Now what?
+To run unit test, run:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+```
+yarn test
+```
 
-# Troubleshooting
+You can able to clean up the project with the following command
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```
+yarn clean
+```

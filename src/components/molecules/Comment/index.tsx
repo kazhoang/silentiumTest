@@ -4,6 +4,7 @@ import getCommentInfo from '@/services/comments/getCommentInfo';
 import CommentSkeleton from './components/SkeletonPlaceHolder';
 import {
 	FlatList,
+	Linking,
 	StyleSheet,
 	Text,
 	TouchableWithoutFeedback,
@@ -66,7 +67,9 @@ export const Comment = ({ id, depth = 1 }: { id: number; depth?: number }) => {
 				>
 					<TouchableWithoutFeedback
 						onPress={() => {
-							// navigation.navigate(RouteName.User, { userId: comment.by });
+							Linking.openURL(
+								`https://news.ycombinator.com/user?id=${comment.by}`,
+							);
 						}}
 					>
 						<Text style={[fonts.gray400, fonts.size_14]}>@{comment.by}</Text>

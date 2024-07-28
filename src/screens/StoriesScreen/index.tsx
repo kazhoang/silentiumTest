@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { useTheme } from '@/theme';
 import { useQuery } from '@tanstack/react-query';
 import getStories from '@/services/stories/getStories';
@@ -61,14 +61,17 @@ export const StoriesScreen = ({ storyType }: { storyType: StoryType }) => {
 	);
 
 	return (
-		<PagingListView<number>
-			contentContainerStyle={{ paddingTop: top }}
-			ListHeaderComponent={renderHeader}
-			data={commonStories}
-			keyExtractor={keyExtractor}
-			renderItem={renderItem}
-			ItemSeparatorComponent={renderSeparator}
-		/>
+		<>
+			<StatusBar translucent backgroundColor="transparent" />
+			<PagingListView<number>
+				contentContainerStyle={{ paddingTop: top }}
+				ListHeaderComponent={renderHeader}
+				data={commonStories}
+				keyExtractor={keyExtractor}
+				renderItem={renderItem}
+				ItemSeparatorComponent={renderSeparator}
+			/>
+		</>
 	);
 };
 

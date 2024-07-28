@@ -1,3 +1,4 @@
+import { useTheme } from '@/theme';
 import React, { useEffect, useState } from 'react';
 import {
 	FlatList,
@@ -22,6 +23,8 @@ const PagingListView = <T,>({
 	renderItem,
 	...flatListProps
 }: PagingListViewProps<T>) => {
+	const { fonts, layout, gutters } = useTheme();
+
 	const [currentData, setCurrentData] = useState<T[]>([]);
 	const [showLoading, setShowLoading] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
@@ -64,12 +67,12 @@ const PagingListView = <T,>({
 			<ActivityIndicator style={{ marginVertical: 5 }} size="small" />
 		) : (
 			<Text
-				style={{
-					fontSize: 10,
-					opacity: 0.5,
-					alignSelf: 'center',
-					marginVertical: 5,
-				}}
+				style={[
+					fonts.gray200,
+					layout.selfCenter,
+					gutters.marginVertical_4,
+					fonts.size_10,
+				]}
 			>
 				-- End of list --
 			</Text>

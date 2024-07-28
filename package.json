@@ -6,11 +6,10 @@
 		"postinstall": "patch-package",
 		"android": "react-native run-android",
 		"ios": "react-native run-ios",
-		"lint": "eslint .",
 		"start": "react-native start",
 		"test": "jest",
 		"pod": "cd ios && pod install && cd ..",
-		"clean": "rm -rf node_modules && rm -rf yarn.lock && rm -rf package-lock.json && rm -rf ios/Podfile.lock && rm -rf ios/Pods && yarn cache clean && yarn install --network-concurrency 1 && yarn pod --verbose"
+		"clean": "rm -rf node_modules && rm -rf yarn.lock && rm -rf package-lock.json && rm -rf ios/Podfile.lock && rm -rf ios/Pods && yarn cache clean && yarn install && yarn pod --verbose"
 	},
 	"dependencies": {
 		"@react-navigation/bottom-tabs": "^6.6.1",
